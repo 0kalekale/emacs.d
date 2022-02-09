@@ -165,3 +165,9 @@
             'default)))))
 
 (setq backup-directory-alist `(("." . "~/.emacs.d/saves")))
+
+(defun fullscreen ()
+       (interactive)
+       (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
+			      '(2 "_NET_WM_STATE_FULLSCREEN" 0)))
+(fullscreen)
